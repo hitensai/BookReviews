@@ -4,7 +4,12 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    if params[:category].blank?
+      @books = Book.all
+    else
+    @category_id = Category.find_by(name: params[:category]).id
+    @books = Book.where(:category_id => @category_id).order("created_at DESC")
+  end
   end
 
   # GET /books/1
@@ -75,6 +80,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :description, :author, :category_id)
+      params.require(:book).permit(:title, :description, :author, :category_id, :book_img)
     end
 end

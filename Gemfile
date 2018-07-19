@@ -30,6 +30,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
+gem 'paperclip', '~> 6.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

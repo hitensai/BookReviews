@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
+<div class="row">
+<div class="col-md-4">
+<%= image_tag @book.book_img.url(:book_show), class: "book-show" %>	
+</div>
+
+<div class="col-md-8">
 <h1>
   <strong>Title:</strong>
   <%= @book.title %>
@@ -14,7 +20,9 @@
   <strong>Description:</strong>
   <%= @book.description %>
 </p>
+</div>
 
+</div>
 
 
 
